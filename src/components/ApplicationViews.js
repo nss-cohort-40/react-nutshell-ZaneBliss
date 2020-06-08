@@ -8,7 +8,7 @@ export default class ApplicationViews extends Component {
       <React.Fragment>
 
         <Route
-          exact path="/" render={props => {
+          exact path="/news" render={props => {
             return null
             // Remove null and return the component which will show news articles
           }}
