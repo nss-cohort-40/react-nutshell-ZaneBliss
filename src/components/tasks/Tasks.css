@@ -1,0 +1,6 @@
+.inputs {
+    display: flex;
+    flex-flow: column;
+    display: none;
+}
+

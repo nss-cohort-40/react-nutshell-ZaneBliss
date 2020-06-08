@@ -5,7 +5,7 @@ import LoginViews from './LoginViews'
 import "./Nutshell.css";
 
 const Nutshell = () => {
-  const [hasUser, setHasUser] = useState(false)
+  const [hasUser, setHasUser] = useState(true)
   if (!hasUser) {
     return (
       <React.Fragment>

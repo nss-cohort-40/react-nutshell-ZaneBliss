@@ -1,5 +1,6 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
+import Tasks from '../modules/Tasks/Tasks'
 
 export default class ApplicationViews extends Component {
 
@@ -30,7 +31,7 @@ export default class ApplicationViews extends Component {
 
         <Route
           path="/tasks" render={props => {
-            return null
+            return <Tasks />
             // Remove null and return the component which will show the user's tasks
           }}
         />
