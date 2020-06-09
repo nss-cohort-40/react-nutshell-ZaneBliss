@@ -5,10 +5,7 @@ const Welcome = () => {
     return (
         <div>
             <Link to='/login'>
-                <button type='submit'>Login</button>
-            </Link>
-            <Link to='/register'>
-                <button type='submit'>Register</button>
+                <button type='submit'>Enter</button>
             </Link>
         </div>
     )

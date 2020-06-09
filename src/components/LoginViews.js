@@ -6,6 +6,7 @@ import Welcome from './welcome/Welcome'
 
 const LoginViews = props => {
     const setHasUser = props.setHasUser
+    const hasUser = props.hasUser
 
     return (
       <React.Fragment>
@@ -17,13 +18,7 @@ const LoginViews = props => {
         />
         <Route
           exact path='/login' render={props => {
-            return <Login setHasUser={setHasUser} />
-            // Remove null and return the component which will show news articles
-          }}
-        />
-        <Route
-          exact path='/register' render={props => {
-            return <Register setHasUser={setHasUser} />
+            return <Login hasUser={hasUser} setHasUser={setHasUser} {...props} />
             // Remove null and return the component which will show news articles
           }}
         />
