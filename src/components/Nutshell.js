@@ -1,10 +1,18 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import NavBar from "./nav/NavBar";
 import ApplicationViews from "./ApplicationViews";
+import LoginViews from './LoginViews'
 import "./Nutshell.css";
 
-class Nutshell extends Component {
-  render() {
+const Nutshell = () => {
+  const [hasUser, setHasUser] = useState(true)
+  if (!hasUser) {
+    return (
+      <React.Fragment>
+        <LoginViews hasUser={hasUser} setHasUser={setHasUser} />
+      </React.Fragment>
+    )
+  } else if (hasUser) {
     return (
       <React.Fragment>
         <NavBar />
