@@ -1,21 +1,30 @@
 import React, { useState } from 'react'
 import { handleFieldChange } from '../../modules/helper'
+import APIManager from '../../modules/APIManager'
 
 const Login = props => {
-    const [credentials, setCredentials] = useState({ username: '', password: '' })
+    const [user, setUser] = useState({ username: '', password: '' })
 
     const handleLogin = e => {
-        if (credentials.username === '' || credentials.password === '') {
+        if (user.username === '' || user.password === '') {
             alert('Please enter all fields.')
         } else {
             e.preventDefault()
-            sessionStorage.setItem('credentials',
-                JSON.stringify(credentials)
-            );
-            props.setHasUser(true)
-            props.history.push('/')
+            APIManager.getUser(user.username, user.password).then(e => {
+                if (e.length === 0) {
+                    alert('No user found.')
+                } else if (e.length > 0) {
+                    sessionStorage.setItem('user',
+                        JSON.stringify(user)
+                    );
+                    props.setHasUser(true)
+                    props.history.push('/')
+                }
+            })
+
         }
     }
+
 
     return (
         <div className='wrapper'>
@@ -24,11 +33,11 @@ const Login = props => {
                     <h1>Login to Nutshell</h1>
                     <div className='username'>
                         <label>Username</label>
-                        <input type='text' id='username' onChange={e => { handleFieldChange(e, credentials, setCredentials) }}></input>
+                        <input type='text' id='username' onChange={e => { handleFieldChange(e, user, setUser) }}></input>
                     </div>
                     <div className='password'>
                         <label>Password</label>
-                        <input type='password' id='password' onChange={e => { handleFieldChange(e, credentials, setCredentials) }}></input>
+                        <input type='password' id='password' onChange={e => { handleFieldChange(e, user, setUser) }}></input>
                     </div>
                     <button onClick={handleLogin}>Sign in</button>
                 </form>

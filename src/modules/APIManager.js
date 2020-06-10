@@ -1,6 +1,12 @@
 const remoteURL = 'http://localhost:8088'
 
 export default {
+    getItem(resource, id) {
+      return fetch(`${remoteURL}/${resource}/${id}`).then(e => e.json())
+    },
+    getUser(username, password) {
+      return fetch(`${remoteURL}/users?username=${username}&password=${password} `).then(e => e.json())
+    },
     getAll(resource) {
         return fetch(`${remoteURL}/${resource}`).then(e => e.json())
     },

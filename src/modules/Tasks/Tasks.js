@@ -28,11 +28,10 @@ const Tasks = props => {
     useEffect(() => {
         getTasks()
     }, [])
-
+            
     return (
         <>
             <div>
-            <form>
                 <button onClick={() => setShowInput(!showInput)}>New task</button>
                 {showInput && <div className='input'>
                     <h1>Enter a task</h1>
@@ -42,7 +41,6 @@ const Tasks = props => {
                     <input type='date' required id='date' value={task.date} onChange={e => {handleFieldChange(e, task, setTask)}}></input>
                     <button type='submit' onClick={createTask}>Submit</button>
                 </div>}
-            </form>
             </div>
             <div>
                 <TaskList tasks={tasks} getTasks={getTasks}/>
