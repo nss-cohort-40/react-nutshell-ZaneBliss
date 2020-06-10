@@ -16,7 +16,7 @@ export default {
           body: JSON.stringify(obj),
         }).then((data) => data.json()); 
     },
-    update(resource, obj) {
+     update(resource, obj) {
       return fetch(`${remoteURL}/${resource}/${obj.id}`, {
         method: "PUT",
         headers: {
