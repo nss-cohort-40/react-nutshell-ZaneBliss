@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState } from "react";
 import NavBar from "./nav/NavBar";
 import ApplicationViews from "./ApplicationViews";
 import LoginViews from './LoginViews'
@@ -10,7 +10,7 @@ const Nutshell = () => {
 if (!hasUser) {
     return (
       <React.Fragment>
-        <LoginViews hasUser={hasUser} setHasUser={setHasUser} />
+        <LoginViews hasUser={hasUser} setHasUser={setHasUser}  />
       </React.Fragment>
     )
   } else if (hasUser) {

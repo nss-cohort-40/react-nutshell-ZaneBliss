@@ -1,7 +1,7 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Tasks from '../modules/Tasks/Tasks'
-import News from '../components/news/News'
+import News from '../modules/News/News'
 export default class ApplicationViews extends Component {
 
   render() {
