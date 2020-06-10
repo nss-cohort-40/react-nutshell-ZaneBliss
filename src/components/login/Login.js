@@ -3,7 +3,7 @@ import { handleFieldChange } from '../../modules/helper'
 import APIManager from '../../modules/APIManager'
 
 const Login = props => {
-    const [user, setUser] = useState({ username: '', password: '' })
+    const [user, setUser] = useState({ username: '', password: '', userId: null})
 
     const handleLogin = e => {
         if (user.username === '' || user.password === '') {
@@ -11,6 +11,7 @@ const Login = props => {
         } else {
             e.preventDefault()
             APIManager.getUser(user.username, user.password).then(e => {
+                user.userId = e[0].id
                 if (e.length === 0) {
                     alert('No user found.')
                 } else if (e.length > 0) {
