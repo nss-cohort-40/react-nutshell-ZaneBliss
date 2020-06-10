@@ -5,10 +5,11 @@ import APIManager from '../../modules/APIManager'
 const Register = props => {
     const [user, setUser] = useState({ username: '', password: '' })
     const createUser = () => {
-        APIManager.post('users', user).then(
+        APIManager.post('users', user).then(user => {
             sessionStorage.setItem('user',
                 JSON.stringify(user)
             )
+        }
         )
     }
 
