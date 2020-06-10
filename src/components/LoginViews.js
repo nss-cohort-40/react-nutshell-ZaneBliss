@@ -22,6 +22,12 @@ const LoginViews = props => {
             // Remove null and return the component which will show news articles
           }}
         />
+        <Route
+          exact path='/register' render={props => {
+            return <Register hasUser={hasUser} setHasUser={setHasUser} {...props} />
+            // Remove null and return the component which will show news articles
+          }}
+        />
       </React.Fragment>
     );
 }

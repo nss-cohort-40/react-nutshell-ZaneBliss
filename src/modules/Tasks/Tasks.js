@@ -4,7 +4,8 @@ import TaskList from './TaskList'
 import APIManager from '../APIManager'
 import { handleFieldChange } from '../helper';
 
-const Tasks = () => {
+const Tasks = props => {
+    console.log(props.hasUser)
     const [showInput, setShowInput] = useState(false);
     const [tasks, setTasks] = useState([])
     const [task, setTask] = useState({task: '', date: ''})
