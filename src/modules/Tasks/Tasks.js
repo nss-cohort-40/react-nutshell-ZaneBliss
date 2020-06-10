@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createElement } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../../components/tasks/Tasks.css'
 import TaskList from './TaskList'
 import APIManager from '../APIManager'
@@ -27,11 +27,10 @@ const Tasks = () => {
     useEffect(() => {
         getTasks()
     }, [])
-
+            
     return (
         <>
             <div>
-            <form>
                 <button onClick={() => setShowInput(!showInput)}>New task</button>
                 {showInput && <div className='input'>
                     <h1>Enter a task</h1>
@@ -41,7 +40,6 @@ const Tasks = () => {
                     <input type='date' required id='date' value={task.date} onChange={e => {handleFieldChange(e, task, setTask)}}></input>
                     <button type='submit' onClick={createTask}>Submit</button>
                 </div>}
-            </form>
             </div>
             <div>
                 <TaskList tasks={tasks} getTasks={getTasks}/>

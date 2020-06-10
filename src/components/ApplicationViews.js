@@ -1,7 +1,7 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Tasks from '../modules/Tasks/Tasks'
-
+import News from '../components/news/News'
 export default class ApplicationViews extends Component {
 
   render() {
@@ -10,7 +10,7 @@ export default class ApplicationViews extends Component {
 
         <Route
           exact path="/news" render={props => {
-            return null
+            return <News {...props} />
             // Remove null and return the component which will show news articles
           }}
         />

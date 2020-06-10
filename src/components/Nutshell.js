@@ -1,12 +1,12 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import NavBar from "./nav/NavBar";
 import ApplicationViews from "./ApplicationViews";
 import LoginViews from './LoginViews'
 import "./Nutshell.css";
 
 const Nutshell = () => {
-  const [hasUser, setHasUser] = useState(false)
-  
+  const [hasUser, setHasUser] = useState(sessionStorage.getItem('credentials'))
+
   if (!hasUser) {
     return (
       <React.Fragment>
