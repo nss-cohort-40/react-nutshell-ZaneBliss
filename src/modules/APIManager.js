@@ -7,6 +7,9 @@ export default {
     getUser(username, password) {
       return fetch(`${remoteURL}/users?username=${username}&password=${password} `).then(e => e.json())
     },
+    getNews() {
+      return fetch(`${remoteURL}/news?_sort=timestamp`).then(e => e.json())
+    },
     getAll(resource) {
         return fetch(`${remoteURL}/${resource}`).then(e => e.json())
     },

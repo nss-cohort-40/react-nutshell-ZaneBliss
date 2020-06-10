@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import ContentEditable from 'react-contenteditable'
 import APIManager from '../../modules/APIManager'
 
 const TaskCard = props => {
@@ -39,7 +40,7 @@ const TaskCard = props => {
     return (
         <div className='task'>
             <div className='task-content'>
-                <p onKeyPress={e => editTask(e)} contentEditable='true'>{props.task.task}</p>
+                <ContentEditable html={props.task.task} onKeyPress={e => editTask(e)} ></ContentEditable>
                 <p>{props.task.date}</p>
                 <label>Complete task</label>
                 <input type='checkbox' onClick={completeTask}></input>

@@ -5,7 +5,6 @@ import APIManager from '../APIManager'
 import { handleFieldChange } from '../helper';
 
 const Tasks = props => {
-    console.log(props.hasUser)
     const [showInput, setShowInput] = useState(false);
     const [tasks, setTasks] = useState([])
     const [task, setTask] = useState({task: '', date: ''})
@@ -16,7 +15,7 @@ const Tasks = props => {
             alert('Please enter all fields.')
         } else {
             task.completed = false
-            task.userId = 1
+            task.userId = JSON.parse(sessionStorage.user).id
             APIManager.post('tasks', task).then(getTasks())
             setTask({task: '', date: ''})
         }

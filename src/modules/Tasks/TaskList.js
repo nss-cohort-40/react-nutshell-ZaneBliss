@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import APIMananger from '../APIManager'
+import React from 'react'
 import TaskCard from '../../components/tasks/TaskCard'
 
 const TaskList = props => { 
