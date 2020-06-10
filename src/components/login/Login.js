@@ -21,7 +21,7 @@ const Login = props => {
         <div className='wrapper'>
             <div className='login'>
                 <form>
-                    <h1>Sign in to Nutshell</h1>
+                    <h1>Login to Nutshell</h1>
                     <div className='username'>
                         <label>Username</label>
                         <input type='text' id='username' onChange={e => { handleFieldChange(e, credentials, setCredentials) }}></input>
