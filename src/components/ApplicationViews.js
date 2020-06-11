@@ -1,4 +1,4 @@
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 import React, { Component } from "react";
 import Tasks from '../modules/Tasks/Tasks'
 import News from '../modules/News/News'
