@@ -10,6 +10,9 @@ export default {
     getNews() {
       return fetch(`${remoteURL}/news?_sort=timestamp`).then(e => e.json())
     },
+    getMessages() {
+       return fetch(`${remoteURL}/messages?_expand=user&_sort=id&_order=desc`).then(e => e.json())
+    },
     getAll(resource) {
         return fetch(`${remoteURL}/${resource}`).then(e => e.json())
     },
