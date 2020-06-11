@@ -16,7 +16,7 @@ if (!hasUser) {
   } else if (hasUser) {
     return (
       <React.Fragment>
-        <NavBar />
+        <NavBar hasUser={hasUser} setHasUser={setHasUser} />
         <ApplicationViews />
       </React.Fragment>
     );
